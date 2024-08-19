@@ -20,9 +20,9 @@ def delins_peptide(self, row):
     nucleotide_sequence=MutableSeq(nucleotide_sequence)
     tubian_leixing=row['AA']
     if tubian_leixing == 'p.M1?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     if tubian_leixing == 'p.?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     weizhi=extract_mutation_info_for_indel(tubian_leixing)-1
     if 'delins' in row['base']:
         matches = re.findall(r'\d+', row['base'])
@@ -34,7 +34,6 @@ def delins_peptide(self, row):
             nucleotide_sequence[position1:position1] = inserted_bases
             nucleotide_sequence=Seq(str(nucleotide_sequence))
             protein_sequence = nucleotide_sequence.translate()
-            
             ###########
             if position1<=self.output_fa_len*3:
                 front_base_str=str(nucleotide_sequence[0:position1])
@@ -143,9 +142,9 @@ def inv_peptide(self, row):
     matches = re.findall(r'\d+', row['base'])
     tubian_leixing=row['AA']
     if tubian_leixing == 'p.M1?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     if tubian_leixing == 'p.?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     weizhi=extract_mutation_info_for_indel(tubian_leixing)-1
 
     if len(matches) == 2:
@@ -219,9 +218,9 @@ def del_peptide(self, row):
     matches = re.findall(r'\d+', row['base'])
     tubian_leixing=row['AA']
     if tubian_leixing == 'p.M1?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     if tubian_leixing == 'p.?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     weizhi=extract_mutation_info_for_indel(tubian_leixing)-1
 
     if len(matches) == 2:
@@ -338,9 +337,9 @@ def ins_peptide(self, row):
     matches = re.findall(r'\d+', row['base'])
     tubian_leixing=row['AA']
     if tubian_leixing == 'p.M1?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     if tubian_leixing == 'p.?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     weizhi=extract_mutation_info_for_indel(tubian_leixing)-1
 
     if len(matches) == 2:
@@ -406,9 +405,9 @@ def dup_peptide(self, row):
     matches = re.findall(r'\d+', row['base'])
     tubian_leixing=row['AA']
     if tubian_leixing == 'p.M1?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     if tubian_leixing == 'p.?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     weizhi=extract_mutation_info_for_indel(tubian_leixing)-1
 
     if len(matches) == 2:

@@ -42,11 +42,11 @@ class NeoantigenSNVfinding:
             return self.indel_peptide(row)
     def snv_peptide(self,row):
         if '-' in row['base']:
-            return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+            return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
         return snv_process(self,row)
     def indel_peptide(self,row):
         if '-' in row['base']:
-            return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+            return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
         if 'delins' in row['base']:
             return delins_peptide(self,row)
         if 'inv' in row['base']:

@@ -18,11 +18,11 @@ def snv_process(self, row):
     tubian_leixing=row['AA']
     tubian_leixing_base=row['base']
     if '-' in tubian_leixing_base:
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     if tubian_leixing == 'p.M1?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})    
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})    
     if tubian_leixing == 'p.?':
-        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None})
+        return pd.Series({"front_base": None, "back_base": None,'front_AA':None,'back_AA':None,'WT_base':None,'MT_base':None,'WT_AA':None,'MT_AA':None,'beforeStart':None,'Start2End':None,'afterEnd':None})
     # pdb.set_trace()
     ####################
     weizhi,yuanshi,zhihou=extract_mutation_info(tubian_leixing)
@@ -76,5 +76,5 @@ def snv_process(self, row):
     back_base_str=str(mutated_protein_sequence[weizhi:weizhi+self.output_fa_len*3])
     str_base_WT=str(base_sequence)
     str_base_MT=str(mutated_protein_sequence)
-    return pd.Series({"front_base": front_base_str, "back_base": back_base_str,'front_AA':front_AA,'back_AA':back_AA,'WT_base':str_base_WT,'MT_base':str_base_MT,'WT_AA':WT_AA,'MT_AA':MT_AA})
+    return pd.Series({"front_base": front_base_str, "back_base": back_base_str,'front_AA':front_AA,'back_AA':back_AA,'WT_base':str_base_WT,'MT_base':str_base_MT,'WT_AA':WT_AA,'MT_AA':MT_AA,'beforeStart':None,'Start2End':None,'afterEnd':None})
 
